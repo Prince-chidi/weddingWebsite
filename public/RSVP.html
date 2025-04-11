@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   
+    <title>Wedding RSVP</title>
+ 
+<style>
+    /* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font for the entire page */
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #e5e5f7 30px
+      ), 
+      repeating-linear-gradient(#f1490cc0, #87cfeb);
+       
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+}
+
+.heading {
+    text-align: center;
+    color: #ff4400;
+    font-family: 'Playfair Display', serif; /* Apply Playfair Display for the couple's name */
+    font-size: 36px; /* Adjust the size if needed */
+    margin-bottom: 20px; /* Add space below the couple's name */
+}
+
+.address, .date {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #2c3e50;
+   
+}
+
+input[type="text"], input[type="email"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #ff4400;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: #ff4400da;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+    .container {
+        padding: 15px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .heading {
+        font-size: 28px; /* Smaller font size for smaller screens */
+        margin-bottom: 15px; /* Less margin for smaller screens */
+    }
+
+    label {
+        font-size: 14px; /* Slightly smaller label text */
+    }
+
+    input[type="text"], input[type="email"], button {
+        font-size: 14px; /* Slightly smaller input and button text */
+    }
+}
+
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V44FP898CT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V44FP898CT');
+</script>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="heading">Joy & Ben</h1>
+        <p class="address">Our Saviour’s Chapel (OSC)<br>Interdenominational Protestant Chaplaincy University Of Port Harcourt</p>
+        <p class="date">Date: 1 February 2025</p>
+        
+        <form id="rsvpForm">
+            <div class="form-group">
+                <div id="nameText"></div> <!-- This will hold the dynamic greeting text -->
+            </div>
+            
+            <div class="form-group">
+                <label>Will you be joining us on our special day?</label>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="attendance" value="yes"> Yes, I’ll be there to celebrate!
+                    </label>
+                    <label>
+                        <input type="radio" name="attendance" value="no"> Sadly, no
+                    </label>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+        
+            <button type="submit" id="submit">Submit</button>
+        </form>
+        
+    </div>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('C2egiy28rnY38VSPg')
+</script>
+     
+  <script>
+    
+    window.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('rsvpForm');  // Reference to the form
+    const urlParams = new URLSearchParams(window.location.search);
+    const nameQuery = urlParams.get('guest');  // Get the guest query parameter (if available)
+
+    // If the query parameter exists
+    if (nameQuery) {
+        const formattedName = nameQuery.replace(/-/g, ' ');  // Replace "-" with space for readability
+
+        // Modify the form's innerHTML dynamically
+        form.innerHTML = `
+            <div class="form-group">
+                <div id="nameText">Hi ${formattedName}, Will you be joining us on our special day?</div> 
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="radio" name="attendance" value="yes"> Yes, I’ll be there to celebrate!
+                </label>
+                <label>
+                    <input type="radio" name="attendance" value="no"> Sadly, I won’t be able to attend.
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <button type="submit" id="submit">Submit</button>
+        `;
+    } else {
+        // If no query parameter exists, show the regular form with name input
+        form.innerHTML = `
+            <div class="form-group">
+                <label for="name">Hi there! Could you please share your name with us?</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Will you be joining us on our special day?</label>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="attendance" value="yes"> Yes, I’ll be there to celebrate!
+                    </label>
+                    <label>
+                        <input type="radio" name="attendance" value="no">Sadly, I won’t be able to attend.
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <button type="submit" id="submit">Submit</button>
+        `;
+    }
+
+    // Add event listener for form submission
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        let name = '';
+        // If there is a query, we don't need to capture the name input
+        if (nameQuery) {
+            name = nameQuery.replace(/-/g, ' '); // Use the name from the query parameter
+        } else {
+            // Otherwise, capture the name from the input field
+            name = document.getElementById('name').value;
+        }
+
+        const attendance = document.querySelector('input[name="attendance"]:checked').value;
+        const email = document.getElementById('email').value;
+
+        const formData = {
+            name: name,
+            attendance: attendance,
+            email: email,
+        };
+
+        try {
+              document.getElementById('submit').innerHTML = 'submitting... ';
+            const response = await fetch('/submit-rsvp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                document.getElementById('submit').innerHTML = 'submitted'
+                alert('Thank you for your response!');
+                
+               
+                if (attendance.toLowerCase() === 'yes') {
+                sendMail(name, email); // Send email
+                window.location.href = "/confirm.html"; // Redirect to confirmation page
+            }
+
+            form.reset(); // Reset the form
+                
+                
+                
+                 
+
+
+             
+
+
+
+
+
+
+
+            } else {
+                alert('There was an error submitting your RSVP. Please try again.');
+            }
+        } catch (error) {
+            alert('Error submitting your RSVP. Please try again later.');
+            console.error('Error:', error);
+            document.getElementById('submit').innerHTML = 'submit'
+        }
+    });
+});
+
+
+
+
+ function sendMail(guestName, guestEmail) {
+    emailjs.send("service_w1ywkcg","template_d4kqcpj",{
+to_name: guestName,
+passport_url: "https://i.ibb.co/JmGqD4t/Whats-App-Image-2024-12-31-at-07-23-16-56b2a1d5.jpg",
+receipent: guestEmail,
+});
+ }
+
+  </script>
+</body>
+</html>

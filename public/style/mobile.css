@@ -1,0 +1,214 @@
+@media screen and (max-width: 800px) {
+    
+  body{
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .scrollable-contentxyz {
+    position: absolute;
+    overflow-y:scroll;
+  }
+  #popup{
+        -webkit-backdrop-filter: blur(5.2px) brightness(80%);
+          backdrop-filter: blur(5.2px) brightness(90%);
+          border-radius: 20px;
+          width: 80%;
+          height: 140px;
+          padding: 15px;
+          color: #fff;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 5%;
+          border: 0.5px solid #00b7ff50;
+      }
+
+      #countdown {
+        text-align: center;
+        font-size: 10px;
+        font-optical-sizing: auto;
+        font-weight: 1000;
+        font-style: normal;
+        color: #ffffffa9;
+      }
+
+      button {
+        position: relative;
+        padding: 10px 25px;
+        background: #ff4400;
+        font-size: 20px;
+        font-weight: 600;
+        color: white;
+        width: 80%;
+        border-radius: 100px;
+        border: 2px solid white;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        position: absolute;
+        bottom: 12px;
+        left: 10%;
+      }
+
+      #mobile-detail-placeholder{
+        height: fit-content;
+        width: 50%;
+        position: absolute;
+        top: 5%;
+        background: transparent;
+        color: white;
+        left: 5%;
+      }
+
+      #CoupleName{
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: white;
+        position: absolute;
+        top: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-family: "Playfair Display", serif;
+     font-optical-sizing: auto;
+      font-style: normal;
+
+      }
+
+      #writeup{
+        font-size: 1rem;
+        font-weight: 400;
+        color: white;
+        position: absolute;
+        bottom: calc(180px + 5%);
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: "Poppins", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        width: 80%;
+      }
+
+      
+
+
+      
+.btn {
+  width: 130px;
+  height: 40px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: #ff4400;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: all .4s;
+  position: absolute;
+  top: 6%;
+  left: calc(94% - 130px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+ 
+ 
+ 
+ #menu-widget{
+  -webkit-backdrop-filter: blur(5.2px) brightness(90%);
+          backdrop-filter: blur(5.2px) brightness(90%);
+          border-radius: 20px;
+          width: 90%;
+          height: 80%;
+          color: #fff;
+          position: absolute;
+          top: 10%;
+          left: 5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          flex-direction: column;
+}
+
+
+#contNav {
+  height: 55%; /* Fixed height for the container */
+  width: 80%;
+  background: rgba(101, 173, 34, 0);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15%;
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 10px; /* Add padding for aesthetics */
+  box-sizing: border-box;
+}
+
+#contNav > a {
+  display: block; /* Force items to stack vertically */
+}
+
+
+
+#ringA{
+  right: 17%;
+  background-image: url(https://res.cloudinary.com/dqtyu2frf/image/upload/v1737831185/DSC_6201_tjkzm1.jpg);
+}
+#ringB{
+  left: 17%;
+  background-image: url(https://res.cloudinary.com/dqtyu2frf/image/upload/v1737831249/DSC_6126_zcuudl.jpg);
+}
+
+
+.ring{
+  border-radius: 50%;
+  background-color: white;
+  bottom: 5%;
+  position: absolute;
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  border: 5px solid white;
+  outline: 6px solid #ff4400;
+  
+  
+}
+
+#gradient-image {
+  background-image: linear-gradient(
+      #ff440067,
+      rgba(255, 255, 255, 0)
+    ),
+    repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e5e5f7 30px
+    ),
+    url('../img/pg2.png'); 
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  bottom: 0px;
+ 
+}
+
+.typing-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-family: "Arial", sans-serif;
+  font-weight: bold; /* Text is bold */
+  color: white; /* Text is white */
+  text-align: center;
+  line-height: 1.8; /* Improves readability with line spacing */
+  width: 80%;
+  font-family: "Playfair Display", serif;
+}
+
+
+
+    }

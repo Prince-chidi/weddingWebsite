@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/app.css">
+    <link rel="stylesheet" href="./style/pc.css">
+    <link rel="stylesheet" href="./style/mobile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+     <title>Joy & Ben | Toast</title>
+     <style>
+      .typing-effect{
+        -webkit-backdrop-filter: blur(5.2px) brightness(80%);
+        backdrop-filter: blur(5.2px) brightness(90%);
+        padding: 25px;
+        border-radius: 10px;
+
+      }
+
+      #lovepng{
+        background-image: url(./img/mg.png);
+        height: 250px;
+        width: 250px;
+        position: absolute;
+        top: -150px;
+        left: -115px;
+        background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      }
+
+      #lovepng2{
+        background-image: url(./img/mg.png);
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        bottom: -120px;
+        right: 0px;
+        background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      }
+     </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V44FP898CT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V44FP898CT');
+</script>
+</head>
+<body id="body">
+    
+    <div class="main-container-toast" id="main-container-toast">
+           <div id="gradient-image">
+           <a href="/#landinpagej" id="backlink"><div class="backbutton"><i class="fas fa-arrow-left" style="color : white;"></i>Back</div></a> 
+            <div class="emoji-container" id="emojiContainer"></div>
+            <div class="typing-effect">
+              <div id="lovepng"></div>
+              <div id="lovepng2"></div>
+              Love is patient, love is kind,
+              it is not easily angered,
+              it keeps no record of wrong,
+              love protects, always trusts,
+              hopes always and
+              always preserves.
+              God is love and
+              Love never fails</div>
+           </div>
+
+    </div>
+    <script src="./scripts/Shorthand Library 1.0/shorthand.js"></script>
+     
+    <script>
+
+
+
+
+
+
+      var mainel =   sh.el('main-container-toast');
+      var mage_el =   sh.el('gradient-image');
+             mainel.style.width = parseInt(window.innerWidth) + 'px';
+             mainel.style.height = parseInt(window.innerHeight) + 'px';
+             mage_el.style.width = parseInt(window.innerWidth) + 'px';
+             mage_el.style.height = parseInt(window.innerHeight) + 'px';
+
+
+
+
+
+
+
+
+           
+
+    
+    const emojiList = ['😍', '💕', '❤️‍🔥', '🥰', '🥂', '💖', '💝', '💞', '❣️', '💘', '🧡', '💜', '💚', '💛'];
+
+
+
+      
+      const emojiContainer = document.getElementById('emojiContainer');
+
+
+const MAX_ACTIVE_EMOJIS = 15; 
+let activeEmojis = 0; 
+
+function createEmoji() {
+  if (activeEmojis >= MAX_ACTIVE_EMOJIS) return; 
+
+  const emoji = document.createElement('div');
+  emoji.classList.add('emoji');
+  emoji.textContent = emojiList[Math.floor(Math.random() * emojiList.length)];
+
+  emoji.style.left = `${Math.random() * 100}%`; 
+  emoji.style.fontSize = `${1.5 + Math.random() * 2}rem`; 
+
+  emojiContainer.appendChild(emoji);
+  activeEmojis++; 
+
+  
+  emoji.addEventListener('animationend', () => {
+    emoji.remove();
+    activeEmojis--;
+  });
+}
+
+// Function to start the emoji animation loop
+function startEmojiAnimation() {
+  setInterval(() => {
+    createEmoji(); // Create a single emoji
+  }, 600); // Interval to create a new emoji (adjust this for frequency)
+}
+
+
+startEmojiAnimation();
+
+
+
+
+    </script>
+</body>
+</html>

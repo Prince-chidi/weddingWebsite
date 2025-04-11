@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style/app.css" />
+  <title>Joy & Ben | Livestream Event</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      user-select: none;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+    }
+
+    .livestreamCont {
+      background-color: #e5e5f7;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: #ff4400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #e5e5f7 30px
+        ),
+        repeating-linear-gradient(#ff44005e, #87cfeb);
+      background-size: cover;
+    }
+
+    .livestreamCont div {
+      margin-bottom: 1rem;
+    }
+
+    #countdown {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .backbutton i {
+      margin-right: 8px;
+    }
+
+    /* YouTube embed container: full width with 16:9 aspect ratio */
+    #youtubeEmbed {
+      display: none; /* Initially hidden */
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+      margin: 20px 0;
+    }
+    #youtubeEmbed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Big floating button in the bottom right */
+    #livestreamButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff4400;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .livestreamCont {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      #countdown {
+        font-size: 1.5rem;
+      }
+
+      .backbutton {
+        font-size: 1rem;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V44FP898CT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-V44FP898CT");
+  </script>
+</head>
+<body>
+  <div class="livestreamCont">
+    <div
+      id="yu"
+      style="
+        font-size: 3rem;
+        -webkit-text-fill-color: #ff4400;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: white;
+      "
+    >
+      Event Not Started!
+    </div>
+    <div id="countdown"></div>
+    <a href="/#landinpagej" id="backlink">
+      <div class="backbutton">
+        <i class="fas fa-arrow-left" style="color: white;"></i>Back
+      </div>
+    </a>
+    <div id="youtubeEmbed">
+      <iframe
+      
+        src="https://www.youtube.com/embed/GHIZ6UxxQJ4"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Floating button -->
+  <a href="/stream2"><button id="livestreamButton">livestream 2</button></a> 
+
+
+  <script>
+    const countdownElement = document.getElementById("countdown");
+    const youtubeEmbed = document.getElementById("youtubeEmbed");
+
+    // Set the event date (February 1, 2025, 10:00:00)
+    const eventDate = new Date("2025-02-01T11:00:00").getTime();
+
+    // Update the countdown every second
+    const timerInterval = setInterval(() => {
+      // Get the current time
+      const now = new Date().getTime();
+
+      // Calculate the difference between the event date and the current time
+      const timeDifference = eventDate - now;
+
+      // Check if the event date has passed
+      if (timeDifference <= 0) {
+        clearInterval(timerInterval);
+        countdownElement.innerHTML = "";
+        youtubeEmbed.style.display = "block"; // Display YouTube embed
+        document.getElementById("yu").innerHTML = " "; // Update the message
+        return;
+      }
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      // Display the result in the countdown element
+      countdownElement.innerHTML = `
+                <span>${days} Days</span>
+                <span>${hours} Hours</span>
+                <span>${minutes} Minutes</span>
+                <span>${seconds} Seconds</span>
+            `;
+    }, 1000);
+  </script>
+</body>
+</html>

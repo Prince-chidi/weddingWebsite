@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joy & Ben | moments</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style/momentstyle/main.css">
+    <link rel="stylesheet" href="./style/momentstyle/gallery.css">
+    <link rel="stylesheet" href="./style/momentstyle/header.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V44FP898CT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V44FP898CT');
+</script>
+    <style>
+@media screen and (max-width: 800px) {
+  
+    .backbutton{
+        width: 50px;
+      height: 40px;
+      font-size: 1.1em;
+      cursor: pointer;
+      background-color: #ff4400;
+      color: #fff;
+      border: 2px solid white;
+      border-radius: 25px;
+      transition: all .4s;
+      position: absolute;
+      top: 50%;
+      left: 3%;
+      transform: translateY(-50%);
+      z-index: 5000;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      }
+}
+
+@media screen and (min-width: 801px) {
+  .backbutton::after{
+    content: "Back";
+  }
+    .backbutton{
+        width: 130px;
+      height: 40px;
+      font-size: 1.1em;
+      cursor: pointer;
+      background-color: #ff4400;
+      color: #fff;
+      border: 2px solid white;
+      border-radius: 25px;
+      transition: all .4s;
+      position: absolute;
+      top: 50%;
+      left: 3%;
+      transform: translateY(-50%);
+      z-index: 5000;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      }
+}
+      
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Joy & Ben | moments</h1>
+      <a href="/#landinpagej" id="backlink"><div class="backbutton"><i class="fas fa-arrow-left" style="color : white;"></i></div></a> 
+     
+    </header>
+    
+    <main>
+      <div class="gallery" id="gallery"></div>
+      <div id="buttonContainer" style="
+  position: fixed;
+  bottom: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  background-color: rgba(255, 192, 203, 0);
+  left: 0;
+  font-family: 'Poppins', sans-serif;
+">
+  <button id="shareMemories" class="mombtns" style="
+    background-color: #ff4400;
+    color: white;
+    border: 3px solid white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.596);
+  ">Share in Our Memories</button>
+  
+  <button id="shuffle" class="mombtns" style="
+    background-color: #ff4400;
+    color: white;
+    border: 3px solid white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.596);
+    
+  ">Shuffle</button>
+</div>
+
+       </main>
+
+    
+   
+    <script src="./scripts/momentsScripts/main2.js"></script>
+  </body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joy & Ben | Crew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+       
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      text-align: center;
+      background-color: #ff4400;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .section {
+      padding: 20px;
+    
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #ff4400;
+      margin-bottom: 20px;
+    }
+
+    .guest-table {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .guest-column {
+      flex: 1;
+      padding: 15px;
+      word-wrap: break-word; 
+    }
+
+
+    .guest-column h3 {
+      text-align: center;
+      color: #ff4400;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .guest {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .guest img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+    }
+
+    .guest p {
+      font-size: 16px;
+      color: #333;
+      position:relative;
+      flex: 1;
+     
+    
+
+    }
+
+    .divider {
+      width: 3px;
+      background: linear-gradient(to bottom, #ff4400, #f9f9f9);
+    }
+
+    .backbutton {
+      width: 100px;
+      height: 40px;
+      font-size: 1.1em;
+      cursor: pointer;
+      background-color: #ff4400;
+      color: #fff;
+      border: 2px solid white;
+      border-radius: 25px;
+      transition: all .4s;
+      position: relative;
+      top: 20px;
+      left: 3%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .backbutton i {
+      margin-right: 5px;
+    }
+
+.brides{
+      
+      margin-left: 20px;
+      text-align: left;
+}
+
+.groom{
+  text-align: right;
+   margin-right: 20px;
+}
+
+
+    @media (max-width: 800px) {
+
+      .guest-table {
+    display: flex;
+    flex-wrap: nowrap; /* Keep the two columns side by side */
+    max-width: 100%; /* Ensure it fits within the screen */
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  }
+
+  .guest-column {
+    flex: 1; /* Keep both columns equal width (50%) */
+    padding: 10px; /* Adjust padding for smaller screens */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .guest {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Stack image and text vertically */
+    gap: 5px; /* Add some spacing between the image and name */
+    text-align: center; /* Center the text beneath the image */
+    }
+
+    .guest img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .guest p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .brides, .groom {
+      margin: 0; /* Remove specific margins */
+    }
+  
+  .guest-column h3 {
+    font-size: 16px; /* Adjust heading font size for mobile */
+    text-align: center;
+  }
+
+ 
+      .divider {
+        min-width: 3px;
+      }
+    }
+
+
+
+    .organogram-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ff4400;
+    }
+
+    .organogram {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .organogram-item {
+      background: #fef6f4;
+      border: 2px solid #ff4400;
+      border-radius: 10px;
+      padding: 15px;
+      width: calc(33.33% - 20px);
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .organogram-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ff4400;
+    }
+
+    .organogram-item p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      .organogram-item {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .organogram-item {
+        width: 100%;
+      }
+    }
+
+
+
+
+
+
+  </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V44FP898CT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V44FP898CT');
+</script>
+</head>
+<body>
+  <header>
+    <h1>Wedding Crew</h1>
+  </header>
+
+  <a href="/#landinpagej" class="backbutton"><i class="fas fa-arrow-left"></i>Back</a>
+
+  <section class="section" style="margin-top: 20px;">
+    <div class="guest-table">
+        <div class="guest-column">
+          <h3> LITTLE BRIDE</h3>
+          <div class="guest">
+            <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737848199/WhatsApp_Image_2025-01-23_at_06.11.38_29908942_pvkleo.jpg" alt="Pearl Kiridi">
+            <p class="brides">Sofolabo Oluwatamilore
+            </p>
+          </div>
+         
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <div class="guest-column">
+          <h3> PAGE BOY</h3>
+          <div class="guest">
+           
+            <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737566037/WhatsApp_Image_2025-01-22_at_12.31.55_9d144671_tvcz3a.jpg" alt="Godsanswer Nwanosike">
+            <p class="groom">Godsanswer Nwanosike</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section" style="margin-top: 20px;">
+    <div class="guest-table">
+      <div class="guest-column">
+        <h3>FLOWER GIRL 1</h3>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737851098/WhatsApp_Image_2025-01-23_at_11.22.54_63946154_mil3ai.jpg" alt="Pearl Kiridi">
+          <p class="brides">Pearl Kiridi</p>
+        </div>
+      </div>
+  
+      <div class="divider"></div>
+  
+      <div class="guest-column">
+        <h3>FLOWER GIRL 2</h3>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737850993/WhatsApp_Image_2025-01-22_at_12.43.00_38d45f61_fsgd8m.jpg" alt="Karis Mac-eteli">
+          <p class="groom">Karis Mac-eteli</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="margin-top: 20px;">
+    <div class="guest-table">
+        <div class="guest-column">
+          <h3>MAID OF HONOR</h3>
+          <div class="guest">
+            <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542688/WhatsApp_Image_2025-01-22_at_07.03.47_d28326e0_jmszxl.jpg" alt="Anneth Kelvin">
+            <p class="brides">Anneth Kelvin</p>
+          </div>
+         
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <div class="guest-column">
+          <h3>BEST MAN</h3>
+          <div class="guest">
+            
+            <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542695/WhatsApp_Image_2025-01-21_at_14.40.06_eb65df91_tt0pty.jpg" alt="Phinehas Ochayi"> 
+            <p class="groom">Phinehas Ochayi
+            </p>    
+          </div>
+        </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="section">
+    <div class="guest-table">
+      <!-- Bridesmaids Column -->
+      <div class="guest-column">
+        <h3>BRIDESMAIDS</h3>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542982/2ab26cb49dc1417c85680d2b09309678_1_dxrylu.jpg" alt="Otonye Briggs">
+          <p class="brides">Otonye Briggs</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737566037/WhatsApp_Image_2025-01-22_at_12.07.02_dca2beb0_cotadl.jpg" alt="Orlu Confidence">
+          <p class="brides">Orlu Confidence</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542689/WhatsApp_Image_2025-01-22_at_07.03.33_11aaca0a_dqqvrr.jpg" alt="Mercy Praise">
+          <p class="brides">Mercy Praise</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737566039/WhatsApp_Image_2025-01-22_at_12.31.27_28caa02d_rkl4vl.jpg" alt="Samuel Success">
+          <p class="brides">Samuel Success</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542691/WhatsApp_Image_2025-01-22_at_07.03.49_2df9a3a2_hjreht.jpg" alt="Enobong Sampson">
+          <p class="brides">Enobong Sampson</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542689/WhatsApp_Image_2025-01-22_at_07.03.51_6552a3a6_r0yi7p.jpg" alt="Merit Chidi">
+          <p class="brides">Merit Chidi</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542687/WhatsApp_Image_2025-01-22_at_07.03.50_42f28fd3_ntzyte.jpg" alt="Precious Clarkson">
+          <p class="brides">Precious Clarkson</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737847996/WhatsApp_Image_2025-01-24_at_10.38.53_d15a8929_ljxalt.jpg" alt="Eunice Mukoro">
+          <p class="brides">Eunice Mukoro</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542688/WhatsApp_Image_2025-01-22_at_07.03.51_bea95da0_sosno6.jpg" alt="Ivory Ifeaka">
+          <p class="brides">Ivory Ifeaka</p>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Groomsmen Column -->
+      <div class="guest-column">
+        <h3>GROOM’S MEN</h3>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737451134/WhatsApp_Image_2025-01-21_at_04.41.06_6a1f5041_ltxgca.jpg" alt="Somadina James">
+          <p class="groom">Somadina James</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737451135/WhatsApp_Image_2025-01-21_at_09.52.55_1d4e2b11_ho90cj.jpg" alt="Samuel Otikor">
+          <p class="groom">Samuel Otikor</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737451133/WhatsApp_Image_2025-01-21_at_06.09.34_61d7a662_belstq.jpg" alt="Ikenna Kanu">
+          <p class="groom">Ikenna Kanu</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737451134/WhatsApp_Image_2025-01-21_at_04.40.35_a0a686ed_acrs0s.jpg" alt="Ifeanyi Kanu">
+          <p class="groom">Ifeanyi Kanu</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737451134/WhatsApp_Image_2025-01-21_at_04.40.47_90be082e_kfla5b.jpg" alt="Favour Ikwudirim">
+          <p class="groom">Favour Ikwudirim</p>
+        </div>
+        <div class="guest">
+          <img src="https://placehold.co/50x50/000000/FFF" alt="Ugochukwu Ugwumba">
+          <p class="groom">Ugochukwu Ugwumba</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737542686/WhatsApp_Image_2025-01-21_at_13.05.51_ea0c5446_kgikdb.jpg" alt="Nnaemeka Michael">
+          <p class="groom">Nnaemeka Michael</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737451140/WhatsApp_Image_2025-01-21_at_09.52.52_f9660f49_obyniy.jpg" alt="Okorie Victor">
+          <p class="groom">Okorie Victor</p>
+        </div>
+        <div class="guest">
+          <img src="https://res.cloudinary.com/dqtyu2frf/image/upload/v1737451133/WhatsApp_Image_2025-01-21_at_09.52.53_b7f336ab_jculen.jpg" alt="Prince John-Africa">
+          <p class="groom">Prince John-Africa</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  
+
+ 
+
+
+
+  <section class="section">
+    <div class="organogram-container">
+      <div class="header">MEET OUR VENDORS</div>
+      <div class="organogram">
+        <div class="organogram-item">
+          <h3>Event Planner</h3>
+          <p>EVENTSBYM O.D. LTD.</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Bride’s Outfits</h3>
+          <p>Trad outfits 1 & 2: Nena</p>
+          <p>Reception dress: Nena</p>
+          <p>Civil outfit: The Handmaid's Place</p>
+          <p>Photoshoot outfit: The Handmaid's Place</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Wedding Dress</h3>
+          <p>TINA’S_BRIDAL_PLACE</p>
+        </div>
+        <div class="organogram-item">
+          <h3>MUA</h3>
+          <p>Not Specified</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Reception Venue</h3>
+          <p>OSC UNIPORT HALL</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Little Bride’s Dress</h3>
+          <p>The Handmaid's Place</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Decorator</h3>
+          <p>THE EVENT GALLERY</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Hairstylist</h3>
+          <p>Not Specified</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Hotel</h3>
+          <p>HOTEL D’AZUR</p>
+        </div>
+        <div class="organogram-item">
+          <h3>DJ</h3>
+          <p>DJ MANNY</p>
+        </div>
+        <div class="organogram-item">
+          <h3>MC</h3>
+          <p>Not Specified</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Photography</h3>
+          <p>Not Specified</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Cake</h3>
+          <p>M.O.D’s CAKES N MORE</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Food and Catering</h3>
+          <p>Not Specified</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Graphics Designer</h3>
+          <p>Not Specified</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Lighting and Special Effects</h3>
+          <p>Not Specified</p>
+        </div>
+        <div class="organogram-item">
+          <h3>Bouquet</h3>
+          <p>Not Specified</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
